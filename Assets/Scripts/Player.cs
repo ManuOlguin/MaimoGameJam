@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 720f;
     public float life = 6;
 
+    [Header("Layers")]
+    [SerializeField] int powerUpLayer;
+    [SerializeField] int AlmaLayer;
+
     void Update()
     {
         // Obtener entrada de movimiento
@@ -57,5 +61,26 @@ public class Player : MonoBehaviour
     {
         //Prender imagen con los 10 sgs
         yield return new WaitForSeconds(10);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == powerUpLayer)
+        {
+
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.layer == AlmaLayer)
+        {
+            GameManager.Instance.Almas += 1;
+            if (GameManager.Instance.Almas >= 4)
+                CanEscape();
+            Destroy(collision.gameObject);
+        }
+    }
+    
+    public void CanEscape()
+    {
+        // Hacer el escape
     }
 }
