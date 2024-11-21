@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 475072447}
   - component: {fileID: 475072446}
   - component: {fileID: 475072445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 1331921204}
   - component: {fileID: 1331921201}
   - component: {fileID: 1331921200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488831437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectilePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

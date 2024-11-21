@@ -34,15 +34,7 @@ public class Player : MonoBehaviour
         }
         void Shoot()
         {
-            // Instanciar el proyectil en el punto de disparo
-            GameObject projectile = Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
-
-            // Agregar velocidad al proyectil
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.velocity = shootPoint.forward * projectileSpeed;
-            }
+            Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
         }
     }
 }
