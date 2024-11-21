@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
     [SerializeField] int powerUpLayer;
     [SerializeField] int AlmaLayer;
 
+    private void Start()
+    {
+        Debug.Log(powerUpLayer+" "+ AlmaLayer);
+    }
     void Update()
     {
         // Obtener entrada de movimiento
