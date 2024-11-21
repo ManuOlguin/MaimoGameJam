@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    
+    public GameObject Pprojectile;
+    public Transform shootPoint;
+    public int segundosReiniciar;
+
+    [Header("Stats")]
     public float speed = 5f;
     public float rotationSpeed = 720f;
-    public GameObject Pprojectile;
-    public Transform shootPoint; // El punto desde donde se disparará
-    public float projectileSpeed = 10f;
+    public float life = 6;
 
     void Update()
     {
@@ -36,5 +40,22 @@ public class Player : MonoBehaviour
         {
             Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
         }
+    }
+
+    public void PlayerGetHit()
+    {
+        if (life >= 0)
+            Die();
+        else
+            life -= 1;
+    }
+    public void Die()
+    {
+        StartCoroutine(Countdown());
+    }
+    public IEnumerator Countdown()
+    {
+        //Prender imagen con los 10 sgs
+        yield return new WaitForSeconds(10);
     }
 }
