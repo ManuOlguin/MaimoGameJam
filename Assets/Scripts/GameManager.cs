@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [SerializeField] public Player player;
+
     [Header("VariablesEntreNiveles")]
     public int Life;
     public int Almas;
