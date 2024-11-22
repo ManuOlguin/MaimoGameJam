@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BasicEnemy : MonoBehaviour
 {
@@ -16,10 +17,13 @@ public class BasicEnemy : MonoBehaviour
     public bool isDead=false;
     float distanceToPlayer;
 
+    private NavMeshAgent navMeshAgent;
+
     private void Start()
     {
         player = GameManager.Instance.player;
         rb = GetComponent<Rigidbody>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
@@ -34,17 +38,23 @@ public class BasicEnemy : MonoBehaviour
         else
         {
             zombieController.SetBool("IsRunning", false);
+            navMeshAgent.isStopped = true;
         }
     }
 
     void MoveTowardsPlayer()
     {
         zombieController.SetBool("IsRunning", true);
-        Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        Vector3 direction = (player.transform.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        //Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        //transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        //Vector3 direction = (player.transform.position - transform.position).normalized;
+        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        //navMeshAgent.isStopped = false;
+        navMeshAgent.SetDestination(player.transform.position);
+        //Vector3 direction = (player.transform.position - transform.position).normalized;
+        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         if (distanceToPlayer < distanceToHit)
             Attack();
         if (distanceToPlayer > distanceToHit)
@@ -80,6 +90,7 @@ public class BasicEnemy : MonoBehaviour
             rb.isKinematic = true;
             rb.velocity = Vector3.zero; 
         }
+        navMeshAgent.isStopped = true;
         StartCoroutine(DestroyDead());
     }
     public IEnumerator DestroyDead()
