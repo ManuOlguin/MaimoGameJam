@@ -12,6 +12,21 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Almas;
     public Image PowerUp;
     public Sprite[] ImagesPowers;
+    public Image[] almasVisuales;
+    public Image[] almasApagadasVisuales;
+
+    public Image[] monedasVisaules;
+    public Slider barraDeVida;
+
+    public TextMeshProUGUI nombreJefe;
+
+    public Image[] vidasVisuales;
+    public Image[] vidasApagadasVisuales;
+    public Image[] PowerUp2;
+
+
+    public 
+    
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -19,6 +34,20 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        foreach (Image i in almasVisuales)
+        {
+            i.enabled = false;
+        }
+        foreach (Image i in monedasVisaules)
+        {
+            i.enabled = false;
+        }
+        foreach (Image i in vidasApagadasVisuales)
+        {
+            i.enabled = false;
+        }
+        barraDeVida.enabled = false;
+        nombreJefe.enabled = false;
 
         Instance = this;
 
