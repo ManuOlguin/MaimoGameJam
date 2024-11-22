@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     public Image[] vidasVisuales;
     public Image[] vidasApagadasVisuales;
     public Image[] PowerUp2;
+    public Image opacidad;
 
 
     public 
@@ -36,18 +37,19 @@ public class UIManager : MonoBehaviour
         }
         foreach (Image i in almasVisuales)
         {
-            i.enabled = false;
+            i.gameObject.SetActive(false);
         }
         foreach (Image i in monedasVisaules)
         {
-            i.enabled = false;
+            i.gameObject.SetActive(false);
         }
         foreach (Image i in vidasApagadasVisuales)
         {
-            i.enabled = false;
+            i.gameObject.SetActive(false);
         }
-        barraDeVida.enabled = false;
-        nombreJefe.enabled = false;
+        barraDeVida.gameObject.SetActive(false);
+        nombreJefe.gameObject.SetActive(false);
+        opacidad.gameObject.SetActive(false);
 
         Instance = this;
 
