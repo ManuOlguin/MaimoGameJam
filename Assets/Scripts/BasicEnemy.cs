@@ -7,10 +7,11 @@ public class BasicEnemy : MonoBehaviour
     public Player player;
     [SerializeField] int bulletLayer;
     [SerializeField] Animator zombieController;
+    Rigidbody rb;
     [Header("Stats")]
     public float speed = 3f;    
     public float detectionRange = 10f;
-    public float distanceToHit = 2f;
+    public float distanceToHit = 0.5f;
     public float life = 5;
     public bool isDead=false;
     float distanceToPlayer;
@@ -18,6 +19,7 @@ public class BasicEnemy : MonoBehaviour
     private void Start()
     {
         player = GameManager.Instance.player;
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -29,17 +31,17 @@ public class BasicEnemy : MonoBehaviour
             // Mueve al enemigo hacia el jugador si está dentro del rango de detección
             MoveTowardsPlayer();
         }
-        //else
-        //{
-        //    zombieController.SetBool("IsRunning", false);
-        //}
+        else
+        {
+            zombieController.SetBool("IsRunning", false);
+        }
     }
 
     void MoveTowardsPlayer()
     {
-        // Mueve al enemigo hacia la posición del jugador
         zombieController.SetBool("IsRunning", true);
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         Vector3 direction = (player.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
@@ -70,7 +72,7 @@ public class BasicEnemy : MonoBehaviour
 
         GetComponent<Collider>().enabled = false;
 
-        Rigidbody rb = GetComponent<Rigidbody>();
+        
         if (rb != null)
         {
             rb.isKinematic = true;
@@ -81,11 +83,17 @@ public class BasicEnemy : MonoBehaviour
     public IEnumerator DestroyDead()
     {
         yield return new WaitForSeconds(5);
-        Destroy(this);
+        Destroy(gameObject);
     }
     public void Attack()
     {
+        rb.velocity = Vector3.zero;
+        speed = 0;
         zombieController.SetBool("IsRunning", false);
         zombieController.SetTrigger("Attack");
+    }
+    public void FinishAttack()
+    {
+        speed = 3;
     }
 }

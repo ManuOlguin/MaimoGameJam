@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    
+
     public void CanEscape()
     {
         // Hacer el escape
