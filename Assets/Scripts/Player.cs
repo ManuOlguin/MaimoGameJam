@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     [Header("Layers")]
     [SerializeField] int powerUpLayer;
     [SerializeField] int AlmaLayer;
+    [SerializeField] int MonedasLayer;
+    [SerializeField] int Cafes;
 
     private void Start()
     {
@@ -47,6 +49,36 @@ public class Player : MonoBehaviour
         void Shoot()
         {
             Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (GameManager.Instance.PowerUp != 0)
+            {
+                switch (GameManager.Instance.PowerUp)
+                {
+                    case 1:
+                        life += 2;
+                        break;
+                    case 2:
+                        StartCoroutine(Inmortal());
+                        break;
+                    case 3:
+                        StartCoroutine(Rampage());
+                        break;
+                    case 4:
+                        StartCoroutine(Velocity());
+                        break;
+                    case 5:
+                        StartCoroutine(BiggerSmolder());
+                        break;
+                    case 6:
+                        StartCoroutine(ChupaSangre());
+                        break;
+                    case 7:
+                        StartCoroutine(PiesDeManteca());
+                        break;
+                }
+            }
         }
     }
 
@@ -81,10 +113,61 @@ public class Player : MonoBehaviour
                 CanEscape();
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.layer == MonedasLayer)
+        {
+            GameManager.Instance.MonedasCafe += 1;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.layer == Cafes)
+        {
+            if (GameManager.Instance.MonedasCafe >= 1)
+                BuyPowerUp();
+            Destroy(collision.gameObject);
+        }
     }
 
     public void CanEscape()
     {
         // Hacer el escape
+    }
+    public void BuyPowerUp()
+    {
+        GameManager.Instance.PowerUp = Random.Range(1, 7);
+    }
+    public IEnumerator Inmortal()
+    {
+        //Aca lo que hace
+        yield return new WaitForSeconds(10);
+        //Aca volver a la normalidad
+    }
+    public IEnumerator Rampage()
+    {
+        //Aca lo que hace
+        yield return new WaitForSeconds(10);
+        //Aca volver a la normalidad
+    }
+    public IEnumerator Velocity()
+    {
+        //Aca lo que hace
+        yield return new WaitForSeconds(10);
+        //Aca volver a la normalidad
+    }
+    public IEnumerator BiggerSmolder()
+    {
+        //Aca lo que hace
+        yield return new WaitForSeconds(10);
+        //Aca volver a la normalidad
+    }
+    public IEnumerator ChupaSangre()
+    {
+        //Aca lo que hace
+        yield return new WaitForSeconds(10);
+        //Aca volver a la normalidad
+    }
+    public IEnumerator PiesDeManteca()
+    {
+        //Aca lo que hace
+        yield return new WaitForSeconds(10);
+        //Aca volver a la normalidad
     }
 }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int Life;
     public int Almas;
     public int PowerUp;
+    public int MonedasCafe;
 
     void Awake()
     {
