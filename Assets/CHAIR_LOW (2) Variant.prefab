@@ -11,52 +11,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 159.82831
+      value: 7.485624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 159.82831
+      value: 7.485623
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 159.82831
+      value: 7.4856215
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.221
+      value: -0.443
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.01025695
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.114
+      value: -1.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.50240827
+      value: -0.5471287
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5024081
+      value: 0.5471287
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4975803
+      value: 0.44794
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49758002
+      value: 0.44794
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
@@ -71,13 +71,13 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 89.447
+      value: 281.385
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 256fc8628174d154c89b21957bc4f03f, type: 2}
+      objectReference: {fileID: 2100000, guid: b2ae3efbf9c70a04e92c2a777c46650b, type: 2}
     - target: {fileID: 919132149155446097, guid: 704156f780545c049b884305fbd12b89,
         type: 3}
       propertyPath: m_Name
@@ -91,6 +91,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5201458360875793364}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 704156f780545c049b884305fbd12b89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7777176405196016554}
   m_SourcePrefab: {fileID: 100100000, guid: 704156f780545c049b884305fbd12b89, type: 3}
 --- !u!1 &6888130950446265250 stripped
 GameObject:
@@ -119,3 +123,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0056113433, y: 0.005446637, z: 0.008091784}
   m_Center: {x: -0.012514131, y: 0.01706395, z: 0.004190679}
+--- !u!208 &7777176405196016554
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888130950446265250}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.003, y: 0.0025, z: 0.004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.013, y: 0.017, z: 0.004}
+  m_TimeToStationary: 0.5

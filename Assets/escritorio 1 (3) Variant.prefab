@@ -11,52 +11,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7000829
+      value: 0.032788653
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5397079
+      value: 0.031985775
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0648135
+      value: 0.034981485
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.49
+      value: -0.676
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.096
+      value: 0.051
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.35
+      value: -1.143
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.93855965
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.345117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 40.378
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
@@ -77,7 +77,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 45991875c0a84a44699b876012a364fc, type: 2}
+      objectReference: {fileID: 2100000, guid: 256fc8628174d154c89b21957bc4f03f, type: 2}
     - target: {fileID: 919132149155446097, guid: 482b56ad1b031c14093a3688c95fc1e7,
         type: 3}
       propertyPath: m_Name
@@ -96,6 +96,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4804927108543875708}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 482b56ad1b031c14093a3688c95fc1e7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1396550017753062010}
   m_SourcePrefab: {fileID: 100100000, guid: 482b56ad1b031c14093a3688c95fc1e7, type: 3}
 --- !u!1 &4882263426560886794 stripped
 GameObject:
@@ -124,3 +128,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8988909, y: 2.1361663, z: 4.1038322}
   m_Center: {x: -0.019216307, y: -0.9117353, z: 6.2903733}
+--- !u!208 &1396550017753062010
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882263426560886794}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1.125, z: 1.97}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.03, y: -1.33, z: 6.51}
+  m_TimeToStationary: 0.5
