@@ -50,12 +50,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PlayerGetHit()
+    public void PlayerGetHit(int damage)
     {
         if (life >= 0)
             Die();
         else
-            life -= 1;
+            life -= damage;
     }
     public void Die()
     {

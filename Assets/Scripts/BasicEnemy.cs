@@ -47,6 +47,8 @@ public class BasicEnemy : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         if (distanceToPlayer < distanceToHit)
             Attack();
+        if (distanceToPlayer > distanceToHit)
+            FinishAttack();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -91,6 +93,7 @@ public class BasicEnemy : MonoBehaviour
         speed = 0;
         zombieController.SetBool("IsRunning", false);
         zombieController.SetTrigger("Attack");
+        
     }
     public void FinishAttack()
     {
