@@ -4,19 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public static SceneController Instance; // Singleton
+    public static SceneController Instance; 
 
     private void Awake()
     {
-        // Configurar Singleton
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Mantener el objeto al cambiar de escena
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
-            Destroy(gameObject); // Evitar duplicados del SceneManager
+            Destroy(gameObject); 
         }
     }
     // Carga una escena por nombre

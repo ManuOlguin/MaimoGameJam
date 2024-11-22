@@ -15,7 +15,7 @@ public class IntroController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            SceneController.Instance.LoadSceneAsync("Level1");
+            SceneController.Instance.LoadSceneAsync("ProbandoCamara");
         }
     }
 }
