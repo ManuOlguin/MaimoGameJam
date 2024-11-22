@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
                 {
                     case 1:
                         life += 2;
+                        GameManager.Instance.PowerUp = 0;
+                        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
                         break;
                     case 2:
                         StartCoroutine(Inmortal());
@@ -158,6 +160,8 @@ public class Player : MonoBehaviour
         //Aca lo que hace
         //Poner que arranque un efecto visual para saber
         GetComponent<BoxCollider>().enabled = false;
+        GameManager.Instance.PowerUp = 0;
+        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
         GetComponent<BoxCollider>().enabled = true;
@@ -165,7 +169,8 @@ public class Player : MonoBehaviour
     public IEnumerator Rampage()
     {
         //Aca lo que hace
-       
+        GameManager.Instance.PowerUp = 0;
+        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
@@ -173,6 +178,8 @@ public class Player : MonoBehaviour
     {
         //Aca lo que hace
         speed *= 2;
+        GameManager.Instance.PowerUp = 0;
+        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         speed /= 2;
         //Aca volver a la normalidad
@@ -180,7 +187,8 @@ public class Player : MonoBehaviour
     public IEnumerator BiggerSmolder()
     {
         //Aca lo que hace
-        
+        GameManager.Instance.PowerUp = 0;
+        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
@@ -209,6 +217,8 @@ public class Player : MonoBehaviour
 
             Debug.Log("El jugador comenzó a moverse. Se detiene la pérdida de corazones.");
         }
+        GameManager.Instance.PowerUp = 0;
+        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
@@ -231,6 +241,8 @@ public class Player : MonoBehaviour
 
             Debug.Log("El jugador comenzó a moverse. Se detiene la pérdida de corazones.");
         }
+        GameManager.Instance.PowerUp = 0;
+        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }

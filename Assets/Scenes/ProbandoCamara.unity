@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5908555, g: 0.5033106, b: 0.36017302, a: 1}
+  m_IndirectSpecularColor: {r: 0.5910477, g: 0.50354564, b: 0.360381, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   Almas: {fileID: 1956826140}
   PowerUp: {fileID: 2084270424}
   ImagesPowers:
-  - {fileID: 21300000, guid: acf70e7db83ca0e48876e52acfe2b085, type: 3}
+  - {fileID: 21300000, guid: 3118bc65d5c952f42b1290b9eeb2af65, type: 3}
   - {fileID: 21300000, guid: 5a090740af31b4345b481fb24a231144, type: 3}
   - {fileID: 21300000, guid: 69b3a6b3d6559154c919de3373aa6343, type: 3}
   - {fileID: 21300000, guid: f3ae105ab5643ea40890ab8fb41c70e8, type: 3}
