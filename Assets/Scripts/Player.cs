@@ -45,8 +45,8 @@ public class Player : MonoBehaviour
         if (movement.magnitude > 0.1f)
         {
             // Mover al personaje
-            Vector3 targetPosition = transform.position + movement.normalized * speed * Time.fixedDeltaTime;
-            rb.MovePosition(targetPosition);
+            Vector3 moveDirection = movement.normalized * speed;
+            rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
             // Rotar al personaje hacia la dirección de movimiento
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         else
         {
             IsMoving = false;
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
             PlayerController.SetBool("IsRunning", false);
         }
         if (Input.GetKeyDown(KeyCode.J) && Time.time > lastShootTime + shootCooldown)
