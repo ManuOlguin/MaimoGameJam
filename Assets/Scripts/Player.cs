@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public GameObject Pprojectile;
     public Transform shootPoint;
     public int segundosReiniciar;
+    public bool IsMoving = false;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -41,6 +42,11 @@ public class Player : MonoBehaviour
             // Rotar al personaje hacia la dirección de movimiento
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            IsMoving = true;
+        }
+        else
+        {
+            IsMoving = false;
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -168,12 +174,50 @@ public class Player : MonoBehaviour
     public IEnumerator ChupaSangre()
     {
         //Aca lo que hace
+        if(!IsMoving)
+        {
+            //Prender efectos
+            while (!IsMoving) 
+            {
+                yield return new WaitForSeconds(0.5f); 
+
+                if (!IsMoving) 
+                {
+                    life -= 1; 
+                    Debug.Log(life);
+
+                    if (life <= 0)
+                    {
+                        Die();
+                        yield break; 
+                    }
+                }
+            }
+
+            Debug.Log("El jugador comenzó a moverse. Se detiene la pérdida de corazones.");
+        }
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
     public IEnumerator PiesDeManteca()
     {
         //Aca lo que hace
+        if (IsMoving)
+        {
+            //Prender efectos
+            while (IsMoving)
+            {
+                yield return new WaitForSeconds(1f);
+
+                if (IsMoving)
+                {
+                    if (Random.Range(0, 8) > 4)
+                        speed = 0;
+                }
+            }
+
+            Debug.Log("El jugador comenzó a moverse. Se detiene la pérdida de corazones.");
+        }
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
