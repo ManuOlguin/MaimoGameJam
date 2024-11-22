@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.59091014, g: 0.50339955, b: 0.36022323, a: 1}
+  m_IndirectSpecularColor: {r: 0.59069467, g: 0.5031992, b: 0.36003944, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -683,88 +683,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e8907dea827224aaf95e20da102242, type: 3}
---- !u!1001 &409699860
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.449902
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.866
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.128221
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e8c4cbb38c93af64a823c71906398344, type: 2}
-    - target: {fileID: 919132149155446097, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_Name
-      value: "coffee machine \u2014 kopia"
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 470ec682d3fd6f546a4758308fc33d33,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1516923447}
-  m_SourcePrefab: {fileID: 100100000, guid: 470ec682d3fd6f546a4758308fc33d33, type: 3}
 --- !u!1 &475072443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,33 +2607,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1331921203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1516923446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 470ec682d3fd6f546a4758308fc33d33,
-    type: 3}
-  m_PrefabInstance: {fileID: 409699860}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1516923447
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516923446}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.005500413, y: 0.0055277515, z: 0.016276047}
-  m_Center: {x: 0, y: 0.00003601703, z: -0.000018382441}
 --- !u!1 &1537447511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,6 +3614,74 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 8ba92e2dd7f884a0f88b98fa2d235fe7, type: 2}
+--- !u!1001 &1852959179708943878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.449902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.128221
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542521636073983000, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883158466944243362, guid: 98dc28103d5a13f40a03536fbbcd28a1,
+        type: 3}
+      propertyPath: m_Name
+      value: "coffee machine \u2014 kopia"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98dc28103d5a13f40a03536fbbcd28a1, type: 3}
 --- !u!4 &4728865846119823227
 Transform:
   m_ObjectHideFlags: 0
@@ -3851,4 +3810,4 @@ SceneRoots:
   - {fileID: 1600150613}
   - {fileID: 835016144}
   - {fileID: 1178712478}
-  - {fileID: 409699860}
+  - {fileID: 1852959179708943878}
