@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.59076655, g: 0.5032308, b: 0.36006147, a: 1}
+  m_IndirectSpecularColor: {r: 0.5910477, g: 0.50354564, b: 0.360381, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1838,7 +1838,7 @@ GameObject:
   - component: {fileID: 1368109126}
   - component: {fileID: 1368109125}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Monedas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 1653871391}
   - component: {fileID: 1653871390}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Vidas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2490,7 +2490,7 @@ GameObject:
   - component: {fileID: 1956826141}
   - component: {fileID: 1956826140}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Almas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2535,7 +2535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Almas Restantes: '
+  m_text: 'Almas Restantes: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2598,7 +2598,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -84.23822, w: 0}
+  m_margin: {x: 0, y: 0, z: -132.08942, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

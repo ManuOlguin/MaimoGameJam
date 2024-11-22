@@ -7,8 +7,8 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-    public TextMeshProUGUI Monedas;
     public TextMeshProUGUI Life;
+    public TextMeshProUGUI Monedas;
     public TextMeshProUGUI Almas;
     public Image PowerUp;
     public Sprite[] ImagesPowers;

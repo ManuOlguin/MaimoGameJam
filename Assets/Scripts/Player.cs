@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == MonedasLayer)
         {
             GameManager.Instance.MonedasCafe += 1;
-            UIManager.Instance.Almas.text = "Monedas: " + GameManager.Instance.MonedasCafe;
+            UIManager.Instance.Monedas.text = "Monedas: " + GameManager.Instance.MonedasCafe;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == Cafes)
