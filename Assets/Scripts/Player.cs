@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
     public void PlayerGetHit(int damage)
     {
-        if (life >= 0)
+        if (life <= 0)
             Die();
         else
             life -= damage;
