@@ -146,18 +146,22 @@ public class Player : MonoBehaviour
     public IEnumerator Rampage()
     {
         //Aca lo que hace
+       
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
     public IEnumerator Velocity()
     {
         //Aca lo que hace
+        speed *= 2;
         yield return new WaitForSeconds(10);
+        speed /= 2;
         //Aca volver a la normalidad
     }
     public IEnumerator BiggerSmolder()
     {
         //Aca lo que hace
+        
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
