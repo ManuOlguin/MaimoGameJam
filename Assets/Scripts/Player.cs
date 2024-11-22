@@ -137,8 +137,11 @@ public class Player : MonoBehaviour
     public IEnumerator Inmortal()
     {
         //Aca lo que hace
+        //Poner que arranque un efecto visual para saber
+        GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
+        GetComponent<BoxCollider>().enabled = true;
     }
     public IEnumerator Rampage()
     {

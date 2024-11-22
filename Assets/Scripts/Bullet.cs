@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f; // Velocidad del proyectil
-    public float lifetime = 5f; // Tiempo de vida del proyectil
+    public float speed = 10f; 
+    public float lifetime = 5f;
+    public float damage = 1;
 
     void Start()
     {

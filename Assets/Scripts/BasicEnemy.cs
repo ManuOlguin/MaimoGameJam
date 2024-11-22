@@ -52,11 +52,11 @@ public class BasicEnemy : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == bulletLayer)
-            GetHit();
+        if (collision.gameObject.TryGetComponent<Bullet>(out Bullet bullet))
+            GetHit(bullet.damage);
     }
 
-    public void GetHit()
+    public void GetHit(float damage)
     {
         life -= 1;
         if (life <= 0)
