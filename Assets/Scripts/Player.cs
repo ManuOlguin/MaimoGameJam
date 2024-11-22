@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Debug.Log(powerUpLayer+" "+ AlmaLayer);
-
+        _uiManager = UIManager.Instance;
     }
     void Update()
     {
@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.layer == powerUpLayer)
         {
+            Debug.Log("ASDHJASD");
             GameManager.Instance.PowerUp = Random.Range(1, 7);
             _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
             Destroy(collision.gameObject);

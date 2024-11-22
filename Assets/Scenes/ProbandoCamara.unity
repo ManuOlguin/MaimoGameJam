@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5963392, g: 0.50893164, b: 0.36612353, a: 1}
+  m_IndirectSpecularColor: {r: 0.59076655, g: 0.5032308, b: 0.36006147, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -627,7 +627,7 @@ PrefabInstance:
     - target: {fileID: 1296501386244933493, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000019073486
+      value: 0.29000193
       objectReference: {fileID: 0}
     - target: {fileID: 1296501386244933493, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
@@ -1093,7 +1093,7 @@ PrefabInstance:
     - target: {fileID: 1296501386244933493, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000019073486
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1296501386244933493, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
@@ -1161,7 +1161,7 @@ PrefabInstance:
     - target: {fileID: 1296501386244933493, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.31
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 1296501386244933493, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
@@ -1335,6 +1335,15 @@ MonoBehaviour:
   Life: {fileID: 1653871390}
   Almas: {fileID: 1956826140}
   PowerUp: {fileID: 2084270424}
+  ImagesPowers:
+  - {fileID: 21300000, guid: acf70e7db83ca0e48876e52acfe2b085, type: 3}
+  - {fileID: 21300000, guid: 5a090740af31b4345b481fb24a231144, type: 3}
+  - {fileID: 21300000, guid: 69b3a6b3d6559154c919de3373aa6343, type: 3}
+  - {fileID: 21300000, guid: f3ae105ab5643ea40890ab8fb41c70e8, type: 3}
+  - {fileID: 21300000, guid: 14ff499661a313c4085dbfdd8b23ec29, type: 3}
+  - {fileID: 21300000, guid: 06282e31cda0ade49acf637e693bbba6, type: 3}
+  - {fileID: 21300000, guid: 73d1b45161638184f9dd86325e4f3ac3, type: 3}
+  - {fileID: 21300000, guid: acf70e7db83ca0e48876e52acfe2b085, type: 3}
 --- !u!1 &1082571987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b7e8fdd8c11ff334a908f795ef1c279c,
@@ -1540,6 +1549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pprojectile: {fileID: 7938193293341756634, guid: de77706d80ec5824db50501424e7e563,
     type: 3}
+  PpowerUp: {fileID: 5246215306788001641, guid: 6a02dca8fb94ff947bb6fad44253aef3,
+    type: 3}
   shootPoint: {fileID: 1488831437}
   segundosReiniciar: 0
   IsMoving: 0
@@ -1548,7 +1559,7 @@ MonoBehaviour:
   life: 6
   powerUpLayer: 8
   AlmaLayer: 7
-  MonedasLayer: 0
+  MonedasLayer: 11
   Cafes: 0
 --- !u!54 &1331921205
 Rigidbody:
@@ -2218,7 +2229,7 @@ PrefabInstance:
     - target: {fileID: 6818789079904725646, guid: 6a02dca8fb94ff947bb6fad44253aef3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000019073486
+      value: 0.29000193
       objectReference: {fileID: 0}
     - target: {fileID: 6818789079904725646, guid: 6a02dca8fb94ff947bb6fad44253aef3,
         type: 3}
@@ -2265,6 +2276,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a02dca8fb94ff947bb6fad44253aef3, type: 3}
+--- !u!1001 &1600150613
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.921612
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.262347
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277485802512000936, guid: c78259e29e09cb64e88c573e2da6895f,
+        type: 3}
+      propertyPath: m_Name
+      value: MonedasCafe (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c78259e29e09cb64e88c573e2da6895f, type: 3}
 --- !u!1 &1653871388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Vidas: '
+  m_text: 'Vidas: 6'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2456,7 +2535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'AlmasRestantes: '
+  m_text: 'Almas Restantes: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2624,7 +2703,7 @@ PrefabInstance:
     - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1366436
+      value: 0.499
       objectReference: {fileID: 0}
     - target: {fileID: 244385194963523292, guid: c78259e29e09cb64e88c573e2da6895f,
         type: 3}
@@ -2746,7 +2825,7 @@ PrefabInstance:
     - target: {fileID: 6818789079904725646, guid: 6a02dca8fb94ff947bb6fad44253aef3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.44000003
       objectReference: {fileID: 0}
     - target: {fileID: 6818789079904725646, guid: 6a02dca8fb94ff947bb6fad44253aef3,
         type: 3}
@@ -2799,6 +2878,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1339790319}
   - {fileID: 1537447513}
+  - {fileID: 946816629}
   - {fileID: 808520827}
   - {fileID: 1331921203}
   - {fileID: 4728865846119823227}
@@ -2810,5 +2890,5 @@ SceneRoots:
   - {fileID: 47790444}
   - {fileID: 24824366}
   - {fileID: 1084359989585660167}
-  - {fileID: 946816629}
   - {fileID: 767811054}
+  - {fileID: 1600150613}

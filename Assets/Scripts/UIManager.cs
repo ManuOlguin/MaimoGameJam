@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Life;
     public TextMeshProUGUI Almas;
     public Image PowerUp;
-    public Image[] ImagesPowers;
+    public Sprite[] ImagesPowers;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -26,6 +26,6 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateImagePower(int PowerUps)
     {
-        PowerUp = ImagesPowers[PowerUps];
+        PowerUp.sprite = ImagesPowers[PowerUps];
     }
 }
