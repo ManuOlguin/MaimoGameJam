@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5908386, g: 0.5033031, b: 0.36015794, a: 1}
+  m_IndirectSpecularColor: {r: 0.59065706, g: 0.50316197, b: 0.36001158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2000,7 +2000,7 @@ MonoBehaviour:
   segundosReiniciar: 0
   IsMoving: 0
   PlayerController: {fileID: 1721203085}
-  speed: 7
+  speed: 6
   rotationSpeed: 2038
   life: 6
   powerUpLayer: 8
@@ -2056,7 +2056,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325369020}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2073,8 +2073,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  m_Constraints: 84
+  m_CollisionDetection: 2
 --- !u!65 &325369025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8531,6 +8531,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5952437, y: 0.063998595, z: 0.9000002}
   m_Center: {x: -0.03963679, y: -0.68594897, z: 0.18090884}
+--- !u!1 &1559190445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1039371797206829155, guid: a026502985d757e45a5eb05a90ff58d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 908374458212930454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1559190449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559190445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016697505, y: 0.022551542, z: 0.0135650085}
+  m_Center: {x: -0.00003315928, y: -0.006256586, z: -0.000010860621}
 --- !u!1001 &1576077594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9803,6 +9830,10 @@ MonoBehaviour:
   fogRevealers:
   - revealerTransform: {fileID: 1196606154}
     sightRange: 10
+    updateOnlyOnMove: 1
+    lastSeenAt: {x: 7, y: -1}
+  - revealerTransform: {fileID: 325369022}
+    sightRange: 7
     updateOnlyOnMove: 1
     lastSeenAt: {x: 7, y: -1}
   levelMidPoint: {fileID: 1010216399}
@@ -12736,7 +12767,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1039371797206829155, guid: a026502985d757e45a5eb05a90ff58d8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1559190449}
   m_SourcePrefab: {fileID: 100100000, guid: a026502985d757e45a5eb05a90ff58d8, type: 3}
 --- !u!1001 &1301627473678924249
 PrefabInstance:

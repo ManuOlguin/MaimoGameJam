@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool IsMoving = false;
     private UIManager _uiManager;
     [SerializeField] Animator PlayerController;
+    private Rigidbody rb;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log(powerUpLayer+" "+ AlmaLayer);
         _uiManager = UIManager.Instance;
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -43,8 +45,8 @@ public class Player : MonoBehaviour
         if (movement.magnitude > 0.1f)
         {
             // Mover al personaje
-            transform.position += movement.normalized * speed * Time.deltaTime;
-
+            Vector3 targetPosition = transform.position + movement.normalized * speed * Time.fixedDeltaTime;
+            rb.MovePosition(targetPosition);
             // Rotar al personaje hacia la dirección de movimiento
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
