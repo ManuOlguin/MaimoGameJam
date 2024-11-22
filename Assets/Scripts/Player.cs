@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 720f;
     public float life = 6;
+    private float shootCooldown = 0.3f;  
+    private float lastShootTime = 0f;
 
     [Header("Layers")]
     [SerializeField] int powerUpLayer;
@@ -54,9 +56,10 @@ public class Player : MonoBehaviour
             IsMoving = false;
             PlayerController.SetBool("IsRunning", false);
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && Time.time > lastShootTime + shootCooldown)
         {
             Shoot();
+            lastShootTime = Time.time;
         }
         void Shoot()
         {
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
                     case 1:
                         life += 2;
                         GameManager.Instance.PowerUp = 0;
+                        UIManager.Instance.Life.text = "Vidas: " + life;
                         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
                         break;
                     case 2:
@@ -179,9 +183,11 @@ public class Player : MonoBehaviour
     public IEnumerator Rampage()
     {
         //Aca lo que hace
+        shootCooldown = 0.1f;
         GameManager.Instance.PowerUp = 0;
         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
+        shootCooldown = 0.3f;
         //Aca volver a la normalidad
     }
     public IEnumerator Velocity()
@@ -198,8 +204,12 @@ public class Player : MonoBehaviour
     {
         //Aca lo que hace
         GameManager.Instance.PowerUp = 0;
+        gameObject.transform.localScale /= 2;
+        speed *= 1.3f;
         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
+        gameObject.transform.localScale *= 2;
+        speed /= 1.3f;
         //Aca volver a la normalidad
     }
     public IEnumerator ChupaSangre()
@@ -210,11 +220,12 @@ public class Player : MonoBehaviour
             //Prender efectos
             while (!IsMoving) 
             {
-                yield return new WaitForSeconds(0.5f); 
+                yield return new WaitForSeconds(1f); 
 
                 if (!IsMoving) 
                 {
-                    life -= 1; 
+                    life -= 1;
+                    UIManager.Instance.Life.text = "Vidas: " + life;
                     Debug.Log(life);
 
                     if (life <= 0)
@@ -244,7 +255,7 @@ public class Player : MonoBehaviour
 
                 if (IsMoving)
                 {
-                    if (Random.Range(0, 8) > 4)
+                    if (Random.Range(4, 8) > 4)
                         speed = 0;
                 }
             }
