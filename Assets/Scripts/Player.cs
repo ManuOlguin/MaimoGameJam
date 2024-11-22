@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int segundosReiniciar;
     public bool IsMoving = false;
     private UIManager _uiManager;
+    [SerializeField] Animator PlayerController;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -46,10 +47,12 @@ public class Player : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             IsMoving = true;
+            PlayerController.SetBool("IsRunning", true);
         }
         else
         {
             IsMoving = false;
+            PlayerController.SetBool("IsRunning", false);
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -95,12 +98,17 @@ public class Player : MonoBehaviour
 
     public void PlayerGetHit(int damage)
     {
+        PlayerController.SetBool("IsRunning", false);
+        if (IsMoving)
+            PlayerController.SetTrigger("HitRunning");
+        else
+            PlayerController.SetTrigger("HitIdle");
         if (life <= 0)
             Die();
         else
         {
             life -= damage;
-            UIManager.Instance.Almas.text = "Vidas: " + life;
+            UIManager.Instance.Life.text = "Vidas: " + life;
         }
     }
     public void Die()
@@ -159,12 +167,12 @@ public class Player : MonoBehaviour
     {
         //Aca lo que hace
         //Poner que arranque un efecto visual para saber
-        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
         GameManager.Instance.PowerUp = 0;
         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
-        GetComponent<BoxCollider>().enabled = true;
+        GetComponent<CapsuleCollider>().enabled = true;
     }
     public IEnumerator Rampage()
     {
