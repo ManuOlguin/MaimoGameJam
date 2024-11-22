@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Monedas;
     public TextMeshProUGUI Life;
     public TextMeshProUGUI Almas;
+    public Image PowerUp;
+    public Image[] ImagesPowers;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -21,5 +23,9 @@ public class UIManager : MonoBehaviour
         Instance = this;
 
         DontDestroyOnLoad(gameObject);
+    }
+    public void UpdateImagePower(int PowerUps)
+    {
+        PowerUp = ImagesPowers[PowerUps];
     }
 }

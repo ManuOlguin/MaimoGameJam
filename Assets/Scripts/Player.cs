@@ -6,9 +6,11 @@ public class Player : MonoBehaviour
 {
     
     public GameObject Pprojectile;
+    public GameObject PpowerUp;
     public Transform shootPoint;
     public int segundosReiniciar;
     public bool IsMoving = false;
+    private UIManager _uiManager;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Debug.Log(powerUpLayer+" "+ AlmaLayer);
+
     }
     void Update()
     {
@@ -109,7 +112,8 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.layer == powerUpLayer)
         {
-
+            GameManager.Instance.PowerUp = Random.Range(1, 7);
+            _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == AlmaLayer)
@@ -127,7 +131,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == Cafes)
         {
             if (GameManager.Instance.MonedasCafe >= 1)
-                BuyPowerUp();
+                BuyPowerUp(collision.gameObject);
             Destroy(collision.gameObject);
         }
     }
@@ -136,9 +140,11 @@ public class Player : MonoBehaviour
     {
         // Hacer el escape
     }
-    public void BuyPowerUp()
+    #region PowerUps
+    public void BuyPowerUp(GameObject coffeMachine)
     {
-        GameManager.Instance.PowerUp = Random.Range(1, 7);
+        //GameManager.Instance.PowerUp = Random.Range(1, 7);
+        Instantiate(PpowerUp, coffeMachine.transform);    
     }
     public IEnumerator Inmortal()
     {
@@ -221,4 +227,5 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
     }
+    #endregion
 }
