@@ -147,8 +147,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == Cafes)
         {
             if (GameManager.Instance.MonedasCafe >= 1)
+            {
                 BuyPowerUp(collision.gameObject);
-            Destroy(collision.gameObject);
+                Destroy(collision.gameObject);
+            }
         }
     }
 
@@ -161,7 +163,7 @@ public class Player : MonoBehaviour
     public void BuyPowerUp(GameObject coffeMachine)
     {
         //GameManager.Instance.PowerUp = Random.Range(1, 7);
-        Instantiate(PpowerUp, coffeMachine.transform);    
+        Instantiate(PpowerUp,new Vector3(coffeMachine.transform.position.x,5f, coffeMachine.transform.position.z),Quaternion.identity);    
     }
     public IEnumerator Inmortal()
     {

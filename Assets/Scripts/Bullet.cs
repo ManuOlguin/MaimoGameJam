@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Lógica al colisionar con algo (por ejemplo, dañar enemigos o destruir el proyectil)
-        Debug.Log("Colisión con: " + collision.gameObject.name);
+        //Debug.Log("Colisión con: " + collision.gameObject.name);
         Destroy(gameObject);
     }
 }
