@@ -26,7 +26,7 @@ public class BasicEnemy : MonoBehaviour
         // Verifica la distancia entre el enemigo y el jugador
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distanceToPlayer <= detectionRange)
+        if (distanceToPlayer <= detectionRange && !isDead)
         {
             // Mueve al enemigo hacia el jugador si está dentro del rango de detección
             MoveTowardsPlayer();
