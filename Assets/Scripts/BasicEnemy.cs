@@ -38,7 +38,7 @@ public class BasicEnemy : MonoBehaviour
         else
         {
             zombieController.SetBool("IsRunning", false);
-            navMeshAgent.isStopped = true;
+            //navMeshAgent.isStopped = true;
         }
     }
 
@@ -52,11 +52,14 @@ public class BasicEnemy : MonoBehaviour
         //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         //navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(player.transform.position);
-        //Vector3 direction = (player.transform.position - transform.position).normalized;
-        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         if (distanceToPlayer < distanceToHit)
+        {
+            navMeshAgent.isStopped = true;
             Attack();
+        }
         if (distanceToPlayer > distanceToHit)
             FinishAttack();
     }
@@ -102,6 +105,7 @@ public class BasicEnemy : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         speed = 0;
+        navMeshAgent.isStopped = true;
         zombieController.SetBool("IsRunning", false);
         zombieController.SetTrigger("Attack");
         
@@ -109,5 +113,6 @@ public class BasicEnemy : MonoBehaviour
     public void FinishAttack()
     {
         speed = 3;
+        navMeshAgent.isStopped = false;
     }
 }
