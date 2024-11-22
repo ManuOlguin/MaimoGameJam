@@ -96,7 +96,10 @@ public class Player : MonoBehaviour
         if (life <= 0)
             Die();
         else
+        {
             life -= damage;
+            UIManager.Instance.Almas.text = "Vidas: " + life;
+        }
     }
     public void Die()
     {
@@ -119,6 +122,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == AlmaLayer)
         {
             GameManager.Instance.Almas += 1;
+            UIManager.Instance.Almas.text = "Almas Restantes: " + (3 - GameManager.Instance.Almas);
             if (GameManager.Instance.Almas >= 4)
                 CanEscape();
             Destroy(collision.gameObject);
@@ -126,6 +130,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == MonedasLayer)
         {
             GameManager.Instance.MonedasCafe += 1;
+            UIManager.Instance.Almas.text = "Monedas: " + GameManager.Instance.MonedasCafe;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == Cafes)
@@ -139,6 +144,7 @@ public class Player : MonoBehaviour
     public void CanEscape()
     {
         // Hacer el escape
+        UIManager.Instance.Almas.text = "Almas Restantes: 3";
     }
     #region PowerUps
     public void BuyPowerUp(GameObject coffeMachine)
