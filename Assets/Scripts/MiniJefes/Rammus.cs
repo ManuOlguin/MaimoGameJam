@@ -8,6 +8,7 @@ public class Rammus : MonoBehaviour
     public Player player;
     [SerializeField] int bulletLayer;
     [SerializeField] Animator amoniteController;
+    public GameObject PAlma;
     Rigidbody rb;
     [Header("Stats")]
     public float speed = 3f;
@@ -141,6 +142,7 @@ public class Rammus : MonoBehaviour
     public IEnumerator DestroyDead()
     {
         yield return new WaitForSeconds(5);
+        Instantiate(PAlma, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
