@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        UIManager.Instance.showBossFightUI(actualFight);
+        //UIManager.Instance.showBossFightUI(actualFight);
     }
     public void IWin()
     {

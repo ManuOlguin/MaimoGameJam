@@ -21,7 +21,7 @@ public class EmpezarPelea : MonoBehaviour
     {
         if (other.gameObject.layer == playerLayer || other.gameObject.layer == minibossLayer)
         {
-            _uiManager.showBossFightUI("Miniboss");
+            _uiManager.showBossFightUI("Amonite the destroyer");
         }
     }
 }
