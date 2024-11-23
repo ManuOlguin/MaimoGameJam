@@ -126,6 +126,7 @@ MonoBehaviour:
   myBoller: {fileID: 0}
   bounced: 0
   returnSpeed: 10
+  bounceSound: {fileID: 7546138853557782021}
 --- !u!54 &7902492546265116088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -268,6 +269,12 @@ PrefabInstance:
 --- !u!4 &5877209559641533806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8764304341104684894, guid: 1e4e0fc36aade6042af45493a6a73fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 2896125345340310064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7546138853557782021 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4650072057279022133, guid: 1e4e0fc36aade6042af45493a6a73fed,
     type: 3}
   m_PrefabInstance: {fileID: 2896125345340310064}
   m_PrefabAsset: {fileID: 0}

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BouncyBall : MonoBehaviour
 {
-    public int maxBounces = 3; // Máximo de rebotes permitidos
+    public int maxBounces = 3; // Mï¿½ximo de rebotes permitidos
     private int bounceCount = 0;
     public GameObject myBoller;
     public bool bounced;
     public float returnSpeed = 10f;
-
+    public AudioSource bounceSound;
     private Rigidbody rb;
     private void Start()
     {
@@ -21,7 +21,7 @@ public class BouncyBall : MonoBehaviour
         // Detecta si el proyectil colisiona con algo que no sea el jugador
         if (collision.gameObject == GameManager.Instance.player)
         {
-            // Aquí puedes aplicar daño al jugadorç
+            // Aquï¿½ puedes aplicar daï¿½o al jugadorï¿½
             GameManager.Instance.player.PlayerGetHit(1);
             //Destroy(gameObject);
         }
@@ -29,9 +29,10 @@ public class BouncyBall : MonoBehaviour
         {
             if(!bounced)
             {
+                bounceSound.Play();
                 bounceCount++;
 
-                // Si alcanza el máximo de rebotes, destruye el proyectil
+                // Si alcanza el mï¿½ximo de rebotes, destruye el proyectil
                 if (bounceCount >= maxBounces)
                 {
                     //Destroy(gameObject);
@@ -48,7 +49,7 @@ public class BouncyBall : MonoBehaviour
     }
     private IEnumerator ReturnToBoller()
     {
-        rb.isKinematic = true; // Detenemos la física para controlar manualmente el movimiento
+        rb.isKinematic = true; // Detenemos la fï¿½sica para controlar manualmente el movimiento
         while (Vector3.Distance(transform.position, myBoller.transform.position) > 0.1f)
         {
             Vector3 direction = (myBoller.transform.position - transform.position).normalized;
