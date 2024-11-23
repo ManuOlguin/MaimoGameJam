@@ -7,9 +7,6 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-    public TextMeshProUGUI Life;
-    public TextMeshProUGUI Monedas;
-    public TextMeshProUGUI Almas;
     public Image PowerUp;
     public Sprite[] ImagesPowers;
     public Image[] almasVisuales;
@@ -59,4 +56,51 @@ public class UIManager : MonoBehaviour
     {
         PowerUp.sprite = ImagesPowers[PowerUps];
     }
+
+    public void UpdateAlmas(int almas)
+    {
+        Debug.Log(almas + " almas" + "Voy a activar " + almas + " almasApagadas" + "Voy a desactivar " + (almasVisuales.Length-almas) + " almas");
+        for (int i = 0; i < almas; i++)
+        {
+            almasVisuales[i].gameObject.SetActive(true);
+        }
+        for (int i = 0; i < almasVisuales.Length-almas; i++)
+        {
+            almasApagadasVisuales[i].gameObject.SetActive(true);
+        }
+
+    }
+    public void UpdateMonedas(int monedas)
+    {
+        Debug.Log(monedas   + " monedas");
+        for (int i = 0; i < monedas; i++)
+        {
+            monedasVisaules[i].gameObject.SetActive(true);
+        }
+    }
+    public void UpdateVidas(float vidas)
+    {
+        Debug.Log(vidas + " vidas" + "Voy a activar " + vidas + " vidasApagadas" + "Voy a desactivar " + (vidasVisuales.Length - vidas) + " vidas");
+        for (int i = 0; i < vidas; i++)
+        {
+            vidasVisuales[i].gameObject.SetActive(true);
+        }
+        for (int i = 0; i < vidasVisuales.Length - vidas; i++)
+        {
+            vidasApagadasVisuales[i].gameObject.SetActive(true);
+        }
+    }
+    public void UpdateBarraDeVida(float vida)
+    {
+        barraDeVida.value = vida;
+    }
+    public void showBossFightUI(string nombre)
+    {
+        barraDeVida.gameObject.SetActive(true);
+        nombreJefe.gameObject.SetActive(true);
+        opacidad.gameObject.SetActive(true);
+        nombreJefe.text = nombre;
+    }
+
+
 }

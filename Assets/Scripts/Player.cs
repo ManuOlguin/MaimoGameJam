@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
             // Mover al personaje
             Vector3 moveDirection = movement.normalized * speed;
             rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
-            // Rotar al personaje hacia la dirección de movimiento
+            // Rotar al personaje hacia la direcciï¿½n de movimiento
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             IsMoving = true;
@@ -115,7 +115,8 @@ public class Player : MonoBehaviour
         else
         {
             life -= damage;
-            UIManager.Instance.Life.text = "Vidas: " + life;
+            _uiManager.UpdateVidas(life);
+            //UIManager.Instance.Life.text = "Vidas: " + life;
         }
     }
     public void Die()
@@ -140,7 +141,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == AlmaLayer)
         {
             GameManager.Instance.Almas += 1;
-            UIManager.Instance.Almas.text = "Almas Restantes: " + (3 - GameManager.Instance.Almas);
+            _uiManager.UpdateAlmas(GameManager.Instance.Almas);
+            //UIManager.Instance.Almas.text = "Almas Restantes: " + (3 - GameManager.Instance.Almas);
             if (GameManager.Instance.Almas >= 4)
                 CanEscape();
             Destroy(collision.gameObject);
@@ -148,7 +150,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == MonedasLayer)
         {
             GameManager.Instance.MonedasCafe += 1;
-            UIManager.Instance.Monedas.text = "Monedas: " + GameManager.Instance.MonedasCafe;
+            _uiManager.UpdateMonedas(GameManager.Instance.MonedasCafe);
+            //UIManager.Instance.Monedas.text = "Monedas: " + GameManager.Instance.MonedasCafe;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == Cafes)
@@ -165,12 +168,16 @@ public class Player : MonoBehaviour
     {
         // Hacer el escape
         UIManager.Instance.Almas.text = "Almas Restantes: 3";
+        _uiManager.UpdateAlmas(3);
+        GameManager.Instance.Almas = 3;
     }
     #region PowerUps
     public void BuyPowerUp(GameObject coffeMachine)
     {
         //GameManager.Instance.PowerUp = Random.Range(1, 7);
         Instantiate(PpowerUp,new Vector3(coffeMachine.transform.position.x,5f, coffeMachine.transform.position.z),Quaternion.identity);    
+        GameManager.Instance.MonedasCafe -= 1;
+        _uiManager.UpdateMonedas(GameManager.Instance.MonedasCafe);
     }
     public IEnumerator Inmortal()
     {
@@ -239,7 +246,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            Debug.Log("El jugador comenzó a moverse. Se detiene la pérdida de corazones.");
+            Debug.Log("El jugador comenzï¿½ a moverse. Se detiene la pï¿½rdida de corazones.");
         }
         GameManager.Instance.PowerUp = 0;
         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
@@ -263,7 +270,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            Debug.Log("El jugador comenzó a moverse. Se detiene la pérdida de corazones.");
+            Debug.Log("El jugador comenzï¿½ a moverse. Se detiene la pï¿½rdida de corazones.");
         }
         GameManager.Instance.PowerUp = 0;
         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
