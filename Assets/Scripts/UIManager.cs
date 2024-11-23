@@ -116,4 +116,21 @@ public class UIManager : MonoBehaviour
     {
         countdownText.text = seconds.ToString();
     }
+    public void Inmortal(bool inmortal)
+    {
+        if(inmortal)
+        {
+            foreach(var item in vidasVisuales)
+            {
+                item.color = Color.yellow;
+            }
+        }
+        else
+        {
+            foreach (var item in vidasVisuales)
+            {
+                item.color = Color.white;
+            }
+        }
+    }
 }

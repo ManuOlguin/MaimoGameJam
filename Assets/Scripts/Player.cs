@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public float life = 6;
     private float shootCooldown = 0.3f;  
     private float lastShootTime = 0f;
+    public bool IsInmortal = true;
 
     [Header("Layers")]
     [SerializeField] int powerUpLayer;
@@ -118,8 +119,11 @@ public class Player : MonoBehaviour
             Die();
         else
         {
-            life -= damage;
-            _uiManager.UpdateVidas(life);
+            if(!IsInmortal)
+            {
+                life -= damage;
+                _uiManager.UpdateVidas(life);
+            }
             //UIManager.Instance.Life.text = "Vidas: " + life;
         }
     }
@@ -193,11 +197,15 @@ public class Player : MonoBehaviour
     {
         //Aca lo que hace
         //Poner que arranque un efecto visual para saber
-        GetComponent<CapsuleCollider>().enabled = false;
+        //GetComponent<CapsuleCollider>().enabled = false;
+        IsInmortal = true;
         GameManager.Instance.PowerUp = 0;
         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
+        _uiManager.Inmortal(true);
         yield return new WaitForSeconds(10);
         //Aca volver a la normalidad
+        _uiManager.Inmortal(true);
+        IsInmortal = false;
         GetComponent<CapsuleCollider>().enabled = true;
     }
     public IEnumerator Rampage()
