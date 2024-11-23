@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.589414, g: 0.5019894, b: 0.35922256, a: 1}
+  m_IndirectSpecularColor: {r: 0.5895564, g: 0.50213265, b: 0.35938442, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10829,7 +10829,7 @@ Transform:
   m_GameObject: {fileID: 1222145783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 43.4, y: 1.46, z: 40.92}
+  m_LocalPosition: {x: 38.67, y: 1.46, z: 40.92}
   m_LocalScale: {x: 8.37051, y: 3.7835572, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16604,9 +16604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15862eabbb5fbb346bb4b5ffb5b81031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: {fileID: 0}
-  Monedas: {fileID: 0}
-  Almas: {fileID: 0}
   PowerUp: {fileID: 727534227}
   ImagesPowers:
   - {fileID: 21300000, guid: 3118bc65d5c952f42b1290b9eeb2af65, type: 3}
