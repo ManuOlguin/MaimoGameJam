@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private UIManager _uiManager;
     [SerializeField] Animator PlayerController;
     private Rigidbody rb;
+    public ParticleSystem magicCircle;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
         {
             if (GameManager.Instance.PowerUp != 0)
             {
+                magicCircle.Play();
                 switch (GameManager.Instance.PowerUp)
                 {
                     case 1:

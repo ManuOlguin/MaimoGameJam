@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5895564, g: 0.50213265, b: 0.35938442, a: 1}
+  m_IndirectSpecularColor: {r: 0.5911612, g: 0.50362176, b: 0.36045018, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3210,6 +3210,7 @@ MonoBehaviour:
   segundosReiniciar: 0
   IsMoving: 0
   PlayerController: {fileID: 1721203085}
+  magicCircle: {fileID: 992316149}
   speed: 6
   rotationSpeed: 2038
   life: 6
@@ -3233,6 +3234,7 @@ Transform:
   - {fileID: 970258837}
   - {fileID: 1683142540}
   - {fileID: 1721203086}
+  - {fileID: 992316150}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &325369023
@@ -9126,6 +9128,136 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989806580}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &992316148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 325369022}
+    m_Modifications:
+    - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.3473354e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 2.3473354e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.3473354e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 2.3473354e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041206305353830590, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409469623893981008, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680782295919573922, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821816438440346034, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351746514873150634, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697941854137187917, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140791294224711539, guid: 24f5b3147ca002e43a711a99ce2a6689,
+        type: 3}
+      propertyPath: m_Name
+      value: BienMagic circle 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24f5b3147ca002e43a711a99ce2a6689, type: 3}
+--- !u!198 &992316149 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3041206305353830590, guid: 24f5b3147ca002e43a711a99ce2a6689,
+    type: 3}
+  m_PrefabInstance: {fileID: 992316148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &992316150 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3747127366446925758, guid: 24f5b3147ca002e43a711a99ce2a6689,
+    type: 3}
+  m_PrefabInstance: {fileID: 992316148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1010216398
 GameObject:
   m_ObjectHideFlags: 0
