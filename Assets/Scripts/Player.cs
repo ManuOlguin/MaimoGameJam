@@ -176,6 +176,10 @@ public class Player : MonoBehaviour
         {
             SceneController.Instance.LoadNextScene();
         }
+        if (collision.gameObject.layer == 18)
+        {
+            GameManager.Instance.StartFight();
+        }
     }
 
     //public void CanEscape()
