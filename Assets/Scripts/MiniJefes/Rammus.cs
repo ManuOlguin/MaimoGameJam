@@ -120,7 +120,7 @@ public class Rammus : MonoBehaviour
     public void Die()
     {
         if (isDead) return;
-
+        navMeshAgent.isStopped = true;
         amoniteController.SetBool("Walk", false);
         amoniteController.SetTrigger("Die");
         speed = 0;
