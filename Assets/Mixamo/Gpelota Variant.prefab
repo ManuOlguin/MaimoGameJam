@@ -801,11 +801,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7e8fdd8c11ff334a908f795ef1c279c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3837284986254988367}
+      addedObject: {fileID: 6806978125841124919}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7e8fdd8c11ff334a908f795ef1c279c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6806978125841124919}
+      addedObject: {fileID: 1541365432361364487}
   m_SourcePrefab: {fileID: 100100000, guid: b7e8fdd8c11ff334a908f795ef1c279c, type: 3}
 --- !u!4 &7145602216798841126 stripped
 Transform:
@@ -868,8 +868,32 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 3
---- !u!65 &3837284986254988367
-BoxCollider:
+--- !u!114 &6806978125841124919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521459943895577500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1b81c76864c084d93e1c0c61a71235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7871287943075629331, guid: f459a5ee61f13ad458fbf3e697652129,
+    type: 3}
+  shootPoint: {fileID: 4267127735426609078}
+  shootCooldown: 2
+  player: {fileID: 0}
+  bulletLayer: 0
+  zombieController: {fileID: 0}
+  speed: 3
+  detectionRange: 10
+  distanceToHit: 0.5
+  life: 5
+  isDead: 0
+--- !u!136 &1541365432361364487
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -886,21 +910,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.4312706, y: 2.5256124, z: 2.6390648}
-  m_Center: {x: 0.086854935, y: 0.7628062, z: 0.001947403}
---- !u!114 &6806978125841124919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521459943895577500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1b81c76864c084d93e1c0c61a71235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  shootPoint: {fileID: 4267127735426609078}
-  shootCooldown: 2
+  serializedVersion: 2
+  m_Radius: 0.60751915
+  m_Height: 2.3998349
+  m_Direction: 1
+  m_Center: {x: 0.01553154, y: 0.69991744, z: 0}
