@@ -37,7 +37,11 @@ public class GameManager : MonoBehaviour
         salida.SetActive(true);
         //PonerMeta
     }
-    public IEnumerator ILose()
+    public void ILose()
+    {
+        StartCoroutine(ILoses());
+    }
+    public IEnumerator ILoses()
     {
         yield return new WaitForSeconds(1);
         UIManager.Instance.StartCountdown(true);
