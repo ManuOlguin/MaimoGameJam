@@ -86,6 +86,7 @@ public class Gpelo : MonoBehaviour
     public void GetHit(float damage)
     {
         life -= 1;
+        UIManager.Instance.UpdateBarraDeVida(life);
         if (life <= 0)
             Die();
     }
