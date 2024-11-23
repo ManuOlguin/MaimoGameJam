@@ -12,7 +12,7 @@ public class Gpelo : MonoBehaviour
 
     public Player player;
     [SerializeField] int bulletLayer;
-    [SerializeField] Animator zombieController;
+    [SerializeField] Animator GpeloController;
     Rigidbody rb;
     [Header("Stats")]
     public float speed = 3f;
@@ -41,7 +41,7 @@ public class Gpelo : MonoBehaviour
         }
         else
         {
-            zombieController.SetBool("IsRunning", false);
+            GpeloController.SetBool("IsRunning", false);
             //navMeshAgent.isStopped = true;
         }
 
@@ -58,7 +58,7 @@ public class Gpelo : MonoBehaviour
     }
     void MoveTowardsPlayer()
     {
-        zombieController.SetBool("IsRunning", true);
+        GpeloController.SetBool("IsRunning", true);
         //Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         //transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         //Vector3 direction = (player.transform.position - transform.position).normalized;
@@ -92,8 +92,8 @@ public class Gpelo : MonoBehaviour
     {
         if (isDead) return;
         //POner animacion y hacer corrutina para que se destruya despues de la animacion
-        zombieController.SetBool("IsRunning", false);
-        zombieController.SetTrigger("Die");
+        GpeloController.SetBool("IsRunning", false);
+        GpeloController.SetTrigger("Die");
         speed = 0;
 
         isDead = true;
@@ -119,8 +119,8 @@ public class Gpelo : MonoBehaviour
         rb.velocity = Vector3.zero;
         speed = 0;
         navMeshAgent.isStopped = true;
-        zombieController.SetBool("IsRunning", false);
-        zombieController.SetTrigger("Attack");
+        GpeloController.SetBool("IsRunning", false);
+        GpeloController.SetTrigger("Attack");
 
     }
     public void FinishAttack()
@@ -146,6 +146,11 @@ public class Gpelo : MonoBehaviour
             {
                 Vector3 direction = (player.transform.position - shootPoint.position).normalized;
                 rb.velocity = direction * 10f; // Ajusta la velocidad según lo necesites
+            }
+            BouncyBall bouncyBallScript = projectile.GetComponent<BouncyBall>();
+            if (bouncyBallScript != null)
+            {
+                bouncyBallScript.myBoller = this.gameObject; // Establece quién lanzó el proyectil
             }
         }
     }
