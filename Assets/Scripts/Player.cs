@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private float shootCooldown = 0.3f;  
     private float lastShootTime = 0f;
     public bool IsInmortal = false;
+    private bool canMove=true;
 
     [Header("Layers")]
     [SerializeField] int powerUpLayer;
@@ -39,70 +40,73 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Obtener entrada de movimiento
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        if(canMove)
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
-        // Crear un vector de movimiento
-        Vector3 movement = new Vector3(horizontal, 0f, vertical);
+            // Crear un vector de movimiento
+            Vector3 movement = new Vector3(horizontal, 0f, vertical);
 
-        if (movement.magnitude > 0.1f)
-        {
-            // Mover al personaje
-            Vector3 moveDirection = movement.normalized * speed;
-            rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
-            // Rotar al personaje hacia la direcci�n de movimiento
-            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            IsMoving = true;
-            PlayerController.SetBool("IsRunning", true);
-        }
-        else
-        {
-            IsMoving = false;
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            PlayerController.SetBool("IsRunning", false);
-        }
-        if (Input.GetKeyDown(KeyCode.J) && Time.time > lastShootTime + shootCooldown)
-        {
-            Shoot();
-            lastShootTime = Time.time;
-        }
-        void Shoot()
-        {
-            Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            if (GameManager.Instance.PowerUp != 0)
+            if (movement.magnitude > 0.1f)
             {
-                magicCircle.Play();
-                switch (GameManager.Instance.PowerUp)
+                // Mover al personaje
+                Vector3 moveDirection = movement.normalized * speed;
+                rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
+                // Rotar al personaje hacia la direcci�n de movimiento
+                Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                IsMoving = true;
+                PlayerController.SetBool("IsRunning", true);
+            }
+            else
+            {
+                IsMoving = false;
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+                PlayerController.SetBool("IsRunning", false);
+            }
+            if (Input.GetKeyDown(KeyCode.J) && Time.time > lastShootTime + shootCooldown)
+            {
+                Shoot();
+                lastShootTime = Time.time;
+            }
+            void Shoot()
+            {
+                Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                if (GameManager.Instance.PowerUp != 0)
                 {
-                    case 1:
-                        life += 2;
-                        GameManager.Instance.PowerUp = 0;
-                        //UIManager.Instance.Life.text = "Vidas: " + life;
-                        _uiManager.UpdateVidas(life);
-                        _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
-                        break;
-                    case 2:
-                        StartCoroutine(Inmortal());
-                        break;
-                    case 3:
-                        StartCoroutine(Rampage());
-                        break;
-                    case 4:
-                        StartCoroutine(Velocity());
-                        break;
-                    case 5:
-                        StartCoroutine(BiggerSmolder());
-                        break;
-                    case 6:
-                        StartCoroutine(ChupaSangre());
-                        break;
-                    case 7:
-                        StartCoroutine(PiesDeManteca());
-                        break;
+                    magicCircle.Play();
+                    switch (GameManager.Instance.PowerUp)
+                    {
+                        case 1:
+                            life += 2;
+                            GameManager.Instance.PowerUp = 0;
+                            //UIManager.Instance.Life.text = "Vidas: " + life;
+                            _uiManager.UpdateVidas(life);
+                            _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
+                            break;
+                        case 2:
+                            StartCoroutine(Inmortal());
+                            break;
+                        case 3:
+                            StartCoroutine(Rampage());
+                            break;
+                        case 4:
+                            StartCoroutine(Velocity());
+                            break;
+                        case 5:
+                            StartCoroutine(BiggerSmolder());
+                            break;
+                        case 6:
+                            StartCoroutine(ChupaSangre());
+                            break;
+                        case 7:
+                            StartCoroutine(PiesDeManteca());
+                            break;
+                    }
                 }
             }
         }
@@ -132,6 +136,7 @@ public class Player : MonoBehaviour
     }
     public void Die()
     {
+        canMove = false;
         GameManager.Instance.ILose();
         //StartCoroutine(Countdown());
     }

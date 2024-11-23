@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator ILoses()
     {
-        yield return new WaitForSeconds(1);
         UIManager.Instance.StartCountdown(true);
+        yield return new WaitForSeconds(1);
         int countdown = 10;
 
         while (countdown > 0)
