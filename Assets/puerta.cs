@@ -6,6 +6,7 @@ public class puerta : MonoBehaviour
 {
     private bool isOpen = false;
     public float rotationSpeed = 1.0f; // Speed of the rotation
+    public GameObject doora;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,5 +32,10 @@ public class puerta : MonoBehaviour
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, angle, transform.eulerAngles.z);
             yield return null;
         }
+    }
+
+    private void EliminarTuki()
+    {
+        Destroy(doora);
     }
 }
