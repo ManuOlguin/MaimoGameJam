@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5907646, g: 0.5032416, b: 0.3600606, a: 1}
+  m_IndirectSpecularColor: {r: 0.59108883, g: 0.50356954, b: 0.36041883, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1e985a01fa689e44da9efcf1cbe11a4d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: eb162a62c236f4d46b9c8d8ec400eb81, type: 2}
   m_BuildHeightMesh: 0
 --- !u!64 &352766191
 MeshCollider:
