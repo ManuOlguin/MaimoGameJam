@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5907646, g: 0.5032416, b: 0.3600606, a: 1}
+  m_IndirectSpecularColor: {r: 0.59114635, g: 0.50353295, b: 0.35985824, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1e985a01fa689e44da9efcf1cbe11a4d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: eb162a62c236f4d46b9c8d8ec400eb81, type: 2}
   m_BuildHeightMesh: 0
 --- !u!64 &352766191
 MeshCollider:
@@ -25539,6 +25539,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6806978125841124919, guid: 6fd7d781fc982ac43b057a5a0c9df150,
+        type: 3}
+      propertyPath: shootCooldown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7145602216798841126, guid: 6fd7d781fc982ac43b057a5a0c9df150,
         type: 3}
       propertyPath: m_LocalPosition.x
