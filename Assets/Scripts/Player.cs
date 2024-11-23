@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public float life = 6;
     private float shootCooldown = 0.3f;  
     private float lastShootTime = 0f;
-    public bool IsInmortal = true;
+    public bool IsInmortal = false;
 
     [Header("Layers")]
     [SerializeField] int powerUpLayer;
