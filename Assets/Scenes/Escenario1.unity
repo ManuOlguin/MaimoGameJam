@@ -2399,6 +2399,8 @@ MonoBehaviour:
   distanceToHit: 2
   life: 5
   isDead: 0
+  zombieSound: {fileID: 0}
+  zombieSound2: {fileID: 0}
 --- !u!136 &14669548
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4148,6 +4150,8 @@ MonoBehaviour:
   distanceToHit: 2
   life: 5
   isDead: 0
+  zombieSound: {fileID: 0}
+  zombieSound2: {fileID: 0}
 --- !u!136 &224449010
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10203,6 +10207,8 @@ MonoBehaviour:
   distanceToHit: 2
   life: 5
   isDead: 0
+  zombieSound: {fileID: 0}
+  zombieSound2: {fileID: 0}
 --- !u!136 &894454782
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10963,6 +10969,8 @@ MonoBehaviour:
   distanceToHit: 2
   life: 5
   isDead: 0
+  zombieSound: {fileID: 0}
+  zombieSound2: {fileID: 0}
 --- !u!136 &929512193
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17835,6 +17843,8 @@ MonoBehaviour:
   distanceToHit: 2
   life: 5
   isDead: 0
+  zombieSound: {fileID: 0}
+  zombieSound2: {fileID: 0}
 --- !u!136 &1568888916
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20785,6 +20795,7 @@ MonoBehaviour:
   barraDeVida: {fileID: 1086783472}
   nombreJefe: {fileID: 1434798549}
   countdownText: {fileID: 1334705674}
+  pressJ: {fileID: 609142571}
   vidasVisuales:
   - {fileID: 1389118397}
   - {fileID: 1981164211}
@@ -23447,6 +23458,8 @@ MonoBehaviour:
   distanceToHit: 2
   life: 5
   isDead: 0
+  zombieSound: {fileID: 0}
+  zombieSound2: {fileID: 0}
 --- !u!136 &1941333522
 CapsuleCollider:
   m_ObjectHideFlags: 0
