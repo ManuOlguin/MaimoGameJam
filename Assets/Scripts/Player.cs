@@ -137,7 +137,8 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == powerUpLayer)
         {
             Debug.Log("ASDHJASD");
-            GameManager.Instance.PowerUp = Random.Range(1, 7);
+            //PARA PIES DE MANTECA Y CHUPA SANGRE 8
+            GameManager.Instance.PowerUp = Random.Range(1,6);
             _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
             Destroy(collision.gameObject);
         }
