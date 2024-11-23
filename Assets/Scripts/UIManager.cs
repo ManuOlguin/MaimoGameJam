@@ -75,10 +75,15 @@ public class UIManager : MonoBehaviour
     public void UpdateMonedas(int monedas)
     {
         Debug.Log(monedas   + " monedas");
+        for (int i = 0; i < monedasVisaules.Length; i++)
+        {
+            monedasVisaules[i].gameObject.SetActive(false);
+        }
         for (int i = 0; i < monedas; i++)
         {
             monedasVisaules[i].gameObject.SetActive(true);
         }
+
     }
     public void UpdateVidas(float vidas)
     {
