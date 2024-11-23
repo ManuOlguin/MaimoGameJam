@@ -9,6 +9,7 @@ public class DañosAlPlayer : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.player.gameObject)
         {
+            Debug.Log(other);
             GameManager.Instance.player.PlayerGetHit(damage);
         }
     }

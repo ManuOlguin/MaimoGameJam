@@ -23,6 +23,7 @@ public class Gpelo : MonoBehaviour
     float distanceToPlayer;
 
     private NavMeshAgent navMeshAgent;
+    public GameObject PAlma;
     private void Start()
     {
         player = GameManager.Instance.player;
@@ -112,6 +113,7 @@ public class Gpelo : MonoBehaviour
     public IEnumerator DestroyDead()
     {
         yield return new WaitForSeconds(5);
+        Instantiate(PAlma, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     public void Attack()
