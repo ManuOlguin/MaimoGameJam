@@ -54,6 +54,20 @@ public class SceneController : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; // Obtiene el índice de la escena actual
+        int nextSceneIndex = currentSceneIndex + 1; // Suma 1 para obtener el índice de la siguiente escena
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Verifica que la siguiente escena existe
+        {
+            SceneManager.LoadScene(nextSceneIndex); // Carga la siguiente escena
+        }
+        else
+        {
+            Debug.LogWarning("No hay más escenas para cargar.");
+        }
+    }
 
     // Salir del juego
     public void QuitGame()

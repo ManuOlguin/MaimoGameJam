@@ -9,12 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 09cbeb2ad9adf134dac8495e063553d7
   - enabled: 1
-    path: Assets/Scenes/ProbandoCamara.unity
-    guid: 8fb0aa6e826abf5498c4f32353332d66
-  - enabled: 1
-    path: Assets/Scenes/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  - enabled: 1
     path: Assets/Scenes/Escenario1.unity
     guid: 712e32b0555896745b62398c120c6fb3
+  - enabled: 1
+    path: Assets/Scenes/Escenario2.unity
+    guid: 07eda98af830afd4f89c0a4ee4392106
   m_configObjects: {}

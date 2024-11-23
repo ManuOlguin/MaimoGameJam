@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] public Player player;
+    [SerializeField] public GameObject salida;
 
     [Header("VariablesEntreNiveles")]
     public int Life;
@@ -29,8 +30,11 @@ public class GameManager : MonoBehaviour
     public void IWin()
     {
         if (Almas>=3)
-        UIManager.Instance.UpdateAlmas(3);
-        Almas = 3;
+        {
+            UIManager.Instance.UpdateAlmas(3);
+            Almas = 3;
+        }
+        salida.SetActive(true);
         //PonerMeta
     }
     public IEnumerator ILose()

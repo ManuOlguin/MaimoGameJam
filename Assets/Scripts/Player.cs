@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] int AlmaLayer;
     [SerializeField] int MonedasLayer;
     [SerializeField] int Cafes;
+    [SerializeField] int Salida;
 
     private void Start()
     {
@@ -148,7 +149,7 @@ public class Player : MonoBehaviour
             GameManager.Instance.Almas += 1;
             _uiManager.UpdateAlmas(GameManager.Instance.Almas);
             //UIManager.Instance.Almas.text = "Almas Restantes: " + (3 - GameManager.Instance.Almas);
-            if (GameManager.Instance.Almas >= 4)
+            if (GameManager.Instance.Almas >= 3)
                 GameManager.Instance.IWin();
             Destroy(collision.gameObject);
         }
@@ -166,6 +167,10 @@ public class Player : MonoBehaviour
                 BuyPowerUp(collision.gameObject);
                 Destroy(collision.gameObject);
             }
+        }
+        if (collision.gameObject.layer == Salida)
+        {
+            SceneController.Instance.LoadNextScene();
         }
     }
 
