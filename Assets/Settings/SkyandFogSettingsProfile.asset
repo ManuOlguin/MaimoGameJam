@@ -151,8 +151,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0}
   spaceEmissionTexture:
     m_OverrideState: 1
-    m_Value: {fileID: -3593279590788295529, guid: 0000000000000000d000000000000000,
-      type: 0}
+    m_Value: {fileID: 8900000, guid: 67ab9389527af404680c87754b167309, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 1
     m_Value: 8
