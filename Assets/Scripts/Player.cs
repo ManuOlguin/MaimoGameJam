@@ -77,7 +77,8 @@ public class Player : MonoBehaviour
                     case 1:
                         life += 2;
                         GameManager.Instance.PowerUp = 0;
-                        UIManager.Instance.Life.text = "Vidas: " + life;
+                        //UIManager.Instance.Life.text = "Vidas: " + life;
+                        _uiManager.UpdateVidas(life);
                         _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
                         break;
                     case 2:
@@ -167,7 +168,7 @@ public class Player : MonoBehaviour
     public void CanEscape()
     {
         // Hacer el escape
-        UIManager.Instance.Almas.text = "Almas Restantes: 3";
+        //UIManager.Instance.Almas.text = "Almas Restantes: 3";
         _uiManager.UpdateAlmas(3);
         GameManager.Instance.Almas = 3;
     }
@@ -235,7 +236,8 @@ public class Player : MonoBehaviour
                 if (!IsMoving) 
                 {
                     life -= 1;
-                    UIManager.Instance.Life.text = "Vidas: " + life;
+                    _uiManager.UpdateVidas(life);
+                    //UIManager.Instance.Life.text = "Vidas: " + life;
                     Debug.Log(life);
 
                     if (life <= 0)
