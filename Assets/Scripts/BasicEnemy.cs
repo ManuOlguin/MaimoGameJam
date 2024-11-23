@@ -16,6 +16,8 @@ public class BasicEnemy : MonoBehaviour
     public float life = 5;
     public bool isDead=false;
     float distanceToPlayer;
+    public AudioSource zombieSound;
+    public AudioSource zombieSound2;
 
     private NavMeshAgent navMeshAgent;
 
@@ -32,7 +34,7 @@ public class BasicEnemy : MonoBehaviour
 
         if (distanceToPlayer <= detectionRange && !isDead)
         {
-            // Mueve al enemigo hacia el jugador si está dentro del rango de detección
+            // Mueve al enemigo hacia el jugador si estï¿½ dentro del rango de detecciï¿½n
             MoveTowardsPlayer();
         }
         else
@@ -98,6 +100,7 @@ public class BasicEnemy : MonoBehaviour
     }
     public IEnumerator DestroyDead()
     {
+        zombieSound.Play();
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }
@@ -108,6 +111,7 @@ public class BasicEnemy : MonoBehaviour
         navMeshAgent.isStopped = true;
         zombieController.SetBool("IsRunning", false);
         zombieController.SetTrigger("Attack");
+        zombieSound2.Play();
         
     }
     public void FinishAttack()

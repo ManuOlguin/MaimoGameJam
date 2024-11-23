@@ -8,6 +8,8 @@ public class puerta : MonoBehaviour
     public float rotationSpeed = 1.0f; // Speed of the rotation
     public GameObject doora;
 
+    public AudioSource doorSound;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && !isOpen)
@@ -25,6 +27,7 @@ public class puerta : MonoBehaviour
 
     private IEnumerator RotateDoor()
     {
+        doorSound.Play();
         float targetAngle = transform.eulerAngles.y - 90;
         while (Mathf.Abs(transform.eulerAngles.y - targetAngle) > 0.01f)
         {
