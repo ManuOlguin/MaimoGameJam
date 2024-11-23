@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public Slider barraDeVida;
 
     public TextMeshProUGUI nombreJefe;
-    public TextMeshProUGUI countdownText;
+    public TextMeshProUGUI countdownText,pressJ;
 
     public Image[] vidasVisuales;
     public Image[] vidasApagadasVisuales;
@@ -111,6 +111,7 @@ public class UIManager : MonoBehaviour
     public void StartCountdown(bool a)
     {
         countdownText.gameObject.SetActive(a);
+        pressJ.gameObject.SetActive(a);
         countDown.gameObject.SetActive(a);
     }
     public void UpdateCountdown(int seconds)
