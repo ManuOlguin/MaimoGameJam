@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.60888, g: 0.52244943, b: 0.38127962, a: 1}
+  m_IndirectSpecularColor: {r: 0.5895987, g: 0.5021668, b: 0.35942394, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10068,8 +10068,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61c32e9ecccfc4a468f435a42ce509e5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.4
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -13796,6 +13796,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3793052606405059063, guid: 660d5800c8d7d57498e382a9538f9c53,
+        type: 3}
+      propertyPath: isPuertaBossFight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5336814031135076742, guid: 660d5800c8d7d57498e382a9538f9c53,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15398,22 +15403,22 @@ PrefabInstance:
     - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: -2.3006339e-38
+      value: 0.0000767489
       objectReference: {fileID: 0}
     - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 7.3e-44
       objectReference: {fileID: 0}
     - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: NaN
+      value: 1.076e-42
       objectReference: {fileID: 0}
     - target: {fileID: 1457630295358542300, guid: 24f5b3147ca002e43a711a99ce2a6689,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: NaN
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3041206305353830590, guid: 24f5b3147ca002e43a711a99ce2a6689,
         type: 3}

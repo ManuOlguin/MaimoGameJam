@@ -10,6 +10,20 @@ public class puerta : MonoBehaviour
 
     public AudioSource doorSound;
 
+    public bool isPuertaBossFight = false;
+
+        private int playerLayer;
+    private int minibossLayer;
+    private UIManager _uiManager;
+
+    void Start()
+    {
+        // Get the layer indices for the player and miniboss layers
+        playerLayer = LayerMask.NameToLayer("Player");
+        minibossLayer = LayerMask.NameToLayer("MiniBoss");
+        _uiManager = UIManager.Instance;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && !isOpen)
@@ -22,6 +36,11 @@ public class puerta : MonoBehaviour
     {
         Debug.Log("Opening door");
         StartCoroutine(RotateDoor());
+        if (isPuertaBossFight)
+        {
+        
+            _uiManager.showBossFightUI("Dr. Bonebreaker");
+        }
         isOpen = true;
     }
 
