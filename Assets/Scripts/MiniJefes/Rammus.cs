@@ -66,7 +66,7 @@ public class Rammus : MonoBehaviour
         navMeshAgent.isStopped = true;
 
         // Animación de giro
-        amoniteController.SetBool("IsRunning", false);
+        amoniteController.SetBool("Walk", false);
         amoniteController.SetBool("Spin",true);
         float spinTime = 1f; // Tiempo de giro antes de la carga
         float timer = 0f;
