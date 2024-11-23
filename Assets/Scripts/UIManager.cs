@@ -95,6 +95,8 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < vidasVisuales.Length - vidas; i++)
         {
             vidasApagadasVisuales[i].gameObject.SetActive(true);
+            vidasVisuales[i].gameObject.SetActive(false);
+
         }
     }
     public void UpdateBarraDeVida(float vida)
