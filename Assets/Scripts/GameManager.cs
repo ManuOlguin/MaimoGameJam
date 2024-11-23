@@ -37,12 +37,21 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         UIManager.Instance.StartCountdown(true);
-        if(Input.GetKeyDown(KeyCode.J))
+        int countdown = 10;
+
+        while (countdown > 0)
         {
-            UIManager.Instance.StartCountdown(false);
-            SceneController.Instance.ReloadCurrentScene();
+            UIManager.Instance.UpdateCountdown(countdown); // Actualiza el contador en la UI
+            yield return new WaitForSeconds(1); // Espera un segundo
+            countdown--;
+
+            if (Input.GetKeyDown(KeyCode.J)) // Permite cancelar el contador si el jugador presiona "J"
+            {
+                UIManager.Instance.StartCountdown(false);
+                SceneController.Instance.ReloadCurrentScene();
+                yield break; // Termina la corrutina
+            }
         }
-        yield return new WaitForSeconds(10);
         SceneController.Instance.LoadScene("Intro");
     }
 }
