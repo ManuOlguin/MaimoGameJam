@@ -62,9 +62,12 @@ public class GameManager : MonoBehaviour
             {
                 UIManager.Instance.StartCountdown(false);
                 SceneController.Instance.ReloadCurrentScene();
+                countdown = 10;
                 yield break; // Termina la corrutina
             }
         }
+        countdown = 10;
+        UIManager.Instance.StartCountdown(false);
         SceneController.Instance.LoadScene("Intro");
     }
     //public void StartFight()

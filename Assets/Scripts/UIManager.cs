@@ -110,6 +110,7 @@ public class UIManager : MonoBehaviour
     }
     public void StartCountdown(bool a)
     {
+        countdownText.gameObject.SetActive(a);
         countDown.gameObject.SetActive(a);
     }
     public void UpdateCountdown(int seconds)
