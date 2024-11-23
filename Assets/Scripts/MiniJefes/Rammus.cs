@@ -112,6 +112,7 @@ public class Rammus : MonoBehaviour
     public void GetHit(float damage)
     {
         life -= damage;
+        UIManager.Instance.UpdateBarraDeVida(life);
         if (life <= 0)
         {
             Die();

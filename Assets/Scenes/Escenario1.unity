@@ -12011,10 +12011,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1072876077}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0.71
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -20379,6 +20379,8 @@ MonoBehaviour:
   player: {fileID: 325369021}
   salida: {fileID: 2002660799}
   actualFight: '"Amonite the destroyer"'
+  perdio: 0
+  toco: 0
   Life: 0
   Almas: 0
   PowerUp: 0
@@ -26129,6 +26131,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4599024282170043214, guid: 07e8907dea827224aaf95e20da102242,
         type: 3}
+    - target: {fileID: 2823169060694098776, guid: 295d65dedf72aa144a61f7950472d292,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 325369021}
     - target: {fileID: 3913995928239094550, guid: 295d65dedf72aa144a61f7950472d292,
         type: 3}
       propertyPath: m_LocalPosition.x
