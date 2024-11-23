@@ -63,7 +63,6 @@ public class Rammus : MonoBehaviour
     {
         isCharging = true;
         navMeshAgent.isStopped = true;
-        rb.velocity = Vector3.zero;
 
         // Animación de giro
         amoniteController.SetBool("IsRunning", false);
@@ -74,25 +73,23 @@ public class Rammus : MonoBehaviour
         while (timer < spinTime)
         {
             timer += Time.deltaTime;
-            transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime); // Gira sobre el eje Y
+            //transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime); // Gira sobre el eje Y
             yield return null;
         }
 
-        // Lanzamiento hacia el jugador
-        Vector3 direction = (player.transform.position - transform.position).normalized;
-        rb.velocity = direction * chargeSpeed;
+        navMeshAgent.isStopped = false;
+        Vector3 targetPosition = player.transform.position; // Posición del jugador en el momento de iniciar la carga
+        navMeshAgent.speed = chargeSpeed; // Cambiar la velocidad del NavMeshAgent para la carga
+        navMeshAgent.SetDestination(targetPosition);
 
         yield return new WaitForSeconds(chargeDuration);
 
         // Detener el movimiento después de la carga
-        rb.velocity = Vector3.zero;
-        navMeshAgent.isStopped = false;
-
-        // Frenar un poco después de la posición del jugador
-        Vector3 stopPosition = transform.position + direction * stopDistanceAfterCharge;
+        Vector3 stopPosition = transform.position + (transform.forward * stopDistanceAfterCharge);
         navMeshAgent.SetDestination(stopPosition);
 
         yield return new WaitForSeconds(0.5f); // Espera antes de continuar
+        navMeshAgent.speed = speed;
         amoniteController.SetBool("Spin", false);
         isCharging = false;
     }
