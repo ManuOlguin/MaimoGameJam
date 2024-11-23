@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
             PlayerController.SetTrigger("HitRunning");
         else
             PlayerController.SetTrigger("HitIdle");
-        if (life <= 0)
+        if (life <= 1)
             Die();
         else
         {
@@ -137,6 +137,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         canMove = false;
+        GetComponent<CapsuleCollider>().enabled = false;
         GameManager.Instance.ILose();
         //StartCoroutine(Countdown());
     }
