@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] public Player player;
-    [SerializeField] public GameObject salida,startFiht;
+    [SerializeField] public GameObject salida;
     [SerializeField] public string actualFight;
 
     [Header("VariablesEntreNiveles")]
@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         DontDestroyOnLoad(gameObject);
+    }
+    private void Start()
+    {
+        UIManager.Instance.showBossFightUI(actualFight);
     }
     public void IWin()
     {
@@ -63,9 +67,9 @@ public class GameManager : MonoBehaviour
         }
         SceneController.Instance.LoadScene("Intro");
     }
-    public void StartFight()
-    {
-        UIManager.Instance.showBossFightUI(actualFight);
-        startFiht.SetActive(false);
-    }
+    //public void StartFight()
+    //{
+    //    UIManager.Instance.showBossFightUI(actualFight);
+    //    startFiht.SetActive(false);
+    //}
 }
