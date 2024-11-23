@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
 
     public void PlayerGetHit(int damage)
     {
+        Debug.Log("1");
         PlayerController.SetBool("IsRunning", false);
         if (IsMoving)
             PlayerController.SetTrigger("HitRunning");
@@ -119,8 +120,10 @@ public class Player : MonoBehaviour
             Die();
         else
         {
-            if(!IsInmortal)
+            Debug.Log("2");
+            if (!IsInmortal)
             {
+                Debug.Log("3");
                 life -= damage;
                 _uiManager.UpdateVidas(life);
             }

@@ -4964,7 +4964,7 @@ MonoBehaviour:
   speed: 6
   rotationSpeed: 2038
   life: 6
-  IsInmortal: 1
+  IsInmortal: 0
   powerUpLayer: 8
   AlmaLayer: 7
   MonedasLayer: 11
