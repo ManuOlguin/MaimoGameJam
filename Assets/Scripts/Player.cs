@@ -24,6 +24,14 @@ public class Player : MonoBehaviour
     public bool IsInmortal = false;
     private bool canMove=true;
 
+    public AudioSource shootSound;
+    public AudioSource powerUpSound;
+    public AudioSource CoffeSound;
+    public AudioSource AlmaSound;
+    public AudioSource MonedaSound;
+
+
+
     [Header("Layers")]
     [SerializeField] int powerUpLayer;
     [SerializeField] int AlmaLayer;
@@ -72,6 +80,7 @@ public class Player : MonoBehaviour
             }
             void Shoot()
             {
+                shootSound.Play();
                 Instantiate(Pprojectile, shootPoint.position, shootPoint.rotation);
             }
             if (Input.GetKeyDown(KeyCode.K))
@@ -152,6 +161,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == powerUpLayer)
         {
             Debug.Log("ASDHJASD");
+            powerUpSound.Play();
             //PARA PIES DE MANTECA Y CHUPA SANGRE 8
             GameManager.Instance.PowerUp = Random.Range(1,6);
             _uiManager.UpdateImagePower(GameManager.Instance.PowerUp);
@@ -162,12 +172,14 @@ public class Player : MonoBehaviour
             GameManager.Instance.Almas += 1;
             _uiManager.UpdateAlmas(GameManager.Instance.Almas);
             //UIManager.Instance.Almas.text = "Almas Restantes: " + (3 - GameManager.Instance.Almas);
+            AlmaSound.Play();
             if (GameManager.Instance.Almas >= 3)
                 GameManager.Instance.IWin();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == MonedasLayer)
         {
+            MonedaSound.Play();
             GameManager.Instance.MonedasCafe += 1;
             _uiManager.UpdateMonedas(GameManager.Instance.MonedasCafe);
             //UIManager.Instance.Monedas.text = "Monedas: " + GameManager.Instance.MonedasCafe;
@@ -177,6 +189,7 @@ public class Player : MonoBehaviour
         {
             if (GameManager.Instance.MonedasCafe >= 1)
             {
+                CoffeSound.Play();
                 BuyPowerUp(collision.gameObject);
                 Destroy(collision.gameObject);
             }
