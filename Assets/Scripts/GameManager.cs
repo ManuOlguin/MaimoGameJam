@@ -63,10 +63,26 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.StartCountdown(false);
                 SceneController.Instance.ReloadCurrentScene();
                 countdown = 10;
+                Life = 6;
+                Almas = 3;
+                MonedasCafe = 0;
+                PowerUp = 0;
+                UIManager.Instance.UpdateAlmas(Almas);
+                UIManager.Instance.UpdateImagePower(PowerUp);
+                UIManager.Instance.UpdateVidas(Life);
+                UIManager.Instance.UpdateMonedas(MonedasCafe);
                 yield break; // Termina la corrutina
             }
         }
         countdown = 10;
+        Life = 6;
+        Almas = 3;
+        MonedasCafe = 0;
+        PowerUp = 0;
+        UIManager.Instance.UpdateAlmas(Almas);
+        UIManager.Instance.UpdateImagePower(PowerUp);
+        UIManager.Instance.UpdateVidas(Life);
+        UIManager.Instance.UpdateMonedas(MonedasCafe);
         UIManager.Instance.StartCountdown(false);
         SceneController.Instance.LoadScene("Intro");
     }

@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999831f158477c4cb75ab3365f13c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325369021}
   bulletLayer: 9
   zombieController: {fileID: 14669543}
   speed: 3
@@ -4140,7 +4140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999831f158477c4cb75ab3365f13c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325369021}
   bulletLayer: 9
   zombieController: {fileID: 224449005}
   speed: 3
@@ -10195,7 +10195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999831f158477c4cb75ab3365f13c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325369021}
   bulletLayer: 9
   zombieController: {fileID: 894454777}
   speed: 3
@@ -10955,7 +10955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999831f158477c4cb75ab3365f13c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325369021}
   bulletLayer: 9
   zombieController: {fileID: 929512188}
   speed: 3
@@ -17827,7 +17827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999831f158477c4cb75ab3365f13c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325369021}
   bulletLayer: 9
   zombieController: {fileID: 1568888911}
   speed: 3
@@ -23437,7 +23437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999831f158477c4cb75ab3365f13c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325369021}
   bulletLayer: 9
   zombieController: {fileID: 1941333517}
   speed: 3
