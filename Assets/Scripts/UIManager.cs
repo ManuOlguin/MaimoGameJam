@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public Image[] vidasApagadasVisuales;
     public Image[] PowerUp2;
     public Image opacidad;
+    public Image countDown;
 
 
     public 
@@ -101,6 +102,9 @@ public class UIManager : MonoBehaviour
         opacidad.gameObject.SetActive(true);
         nombreJefe.text = nombre;
     }
-
+    public void StartCountdown(bool a)
+    {
+        countDown.gameObject.SetActive(a);
+    }
 
 }

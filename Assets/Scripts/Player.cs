@@ -124,13 +124,14 @@ public class Player : MonoBehaviour
     }
     public void Die()
     {
-        StartCoroutine(Countdown());
+        GameManager.Instance.ILose();
+        //StartCoroutine(Countdown());
     }
-    public IEnumerator Countdown()
-    {
-        //Prender imagen con los 10 sgs
-        yield return new WaitForSeconds(10);
-    }
+    //public IEnumerator Countdown()
+    //{
+    //    //Prender imagen con los 10 sgs
+    //    yield return new WaitForSeconds(10);
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -148,7 +149,7 @@ public class Player : MonoBehaviour
             _uiManager.UpdateAlmas(GameManager.Instance.Almas);
             //UIManager.Instance.Almas.text = "Almas Restantes: " + (3 - GameManager.Instance.Almas);
             if (GameManager.Instance.Almas >= 4)
-                CanEscape();
+                GameManager.Instance.IWin();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == MonedasLayer)
@@ -168,13 +169,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void CanEscape()
-    {
-        // Hacer el escape
-        //UIManager.Instance.Almas.text = "Almas Restantes: 3";
-        _uiManager.UpdateAlmas(3);
-        GameManager.Instance.Almas = 3;
-    }
+    //public void CanEscape()
+    //{
+    //    // Hacer el escape
+    //    //UIManager.Instance.Almas.text = "Almas Restantes: 3";
+    //    _uiManager.UpdateAlmas(3);
+    //    GameManager.Instance.Almas = 3;
+    //}
     #region PowerUps
     public void BuyPowerUp(GameObject coffeMachine)
     {
