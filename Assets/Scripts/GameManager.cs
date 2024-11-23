@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject salida;
     [SerializeField] public string actualFight;
 
+    public bool perdio, toco;
+
     [Header("VariablesEntreNiveles")]
     public int Life;
     public int Almas;
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator ILoses()
     {
         UIManager.Instance.StartCountdown(true);
+        perdio = true;
         yield return new WaitForSeconds(1);
         int countdown = 10;
 
@@ -58,10 +61,9 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1); // Espera un segundo
             countdown--;
 
-            if (Input.GetKeyDown(KeyCode.J)) // Permite cancelar el contador si el jugador presiona "J"
+            if (toco) // Permite cancelar el contador si el jugador presiona "J"
             {
                 UIManager.Instance.StartCountdown(false);
-                SceneController.Instance.ReloadCurrentScene();
                 countdown = 10;
                 Life = 6;
                 Almas = 3;
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.UpdateImagePower(PowerUp);
                 UIManager.Instance.UpdateVidas(Life);
                 UIManager.Instance.UpdateMonedas(MonedasCafe);
+                SceneController.Instance.ReloadCurrentScene();
                 yield break; // Termina la corrutina
             }
         }
@@ -85,6 +88,16 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.UpdateMonedas(MonedasCafe);
         UIManager.Instance.StartCountdown(false);
         SceneController.Instance.LoadScene("Intro");
+    }
+    private void Update()
+    {
+        if(perdio)
+        {
+            if (Input.GetKeyDown(KeyCode.J)) // Permite cancelar el contador si el jugador presiona "J"
+            {
+                toco = true;
+            }
+        }
     }
     //public void StartFight()
     //{
